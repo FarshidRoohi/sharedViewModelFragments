@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ShareViewModelFragments</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="increase_value">increase value</string>
+    <string name="zero">0</string>
+    <string name="increase">increase</string>
+    <string name="reduce">reduce</string>
+</resources>
