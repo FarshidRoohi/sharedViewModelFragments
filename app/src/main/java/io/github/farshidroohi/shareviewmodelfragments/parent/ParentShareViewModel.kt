@@ -4,13 +4,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class ParentShareViewModel : ViewModel() {
 
     private val _mutableSharedFlow = MutableStateFlow(ParentUIState())
-    val uiStateSharedFlow: SharedFlow<ParentUIState> = _mutableSharedFlow.asSharedFlow()
+    val uiStateStatedFlow: StateFlow<ParentUIState> = _mutableSharedFlow.asStateFlow()
 
     fun increaseValue() {
         viewModelScope.launch {

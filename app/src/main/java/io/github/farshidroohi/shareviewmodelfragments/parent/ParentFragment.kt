@@ -25,7 +25,7 @@ class ParentFragment : Fragment() {
 
         lifecycleScope.launch {
             lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.uiStateSharedFlow.collect { state ->
+                viewModel.uiStateStatedFlow.collect { state ->
                     binding.layoutCounter.txtCounter.text = state.number.toString()
                 }
             }
