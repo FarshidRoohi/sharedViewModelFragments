@@ -15,7 +15,7 @@ class ParentShareViewModel : ViewModel() {
     fun increaseValue() {
         viewModelScope.launch {
             val newNumber = _mutableSharedFlow.value.number + 1
-            _mutableSharedFlow.emit(ParentUIState(number = newNumber))
+            _mutableSharedFlow.emit(_mutableSharedFlow.value.copy(number = newNumber))
         }
 
     }
@@ -23,7 +23,7 @@ class ParentShareViewModel : ViewModel() {
     fun reduceValue() {
         viewModelScope.launch {
             val newNumber = _mutableSharedFlow.value.number - 1
-            _mutableSharedFlow.emit(ParentUIState(number = newNumber))
+            _mutableSharedFlow.emit(_mutableSharedFlow.value.copy(number = newNumber))
         }
     }
 
